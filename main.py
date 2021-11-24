@@ -1,16 +1,26 @@
-# This is a sample Python script.
+"""Shapes."""
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+from math import pi
+import os
 
 
-# Press the green button in the gutter to run the script.
+class Circle:
+    def __init__(self, radius, fill="red", stroke="black"):
+        self._radius = radius
+        self._fill = fill
+        self._stroke = stroke
+
+    def calculate_area(self):
+        return pi * self._radius ** 2
+
+
+def main():
+    circle = Circle(5.0, fill="orange", stroke="red")
+    print(f"area = {circle.calculate_area()}")
+
+    circle2 = Circle(8.0)
+    return os.EX_OK
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    sys.exit(main())
